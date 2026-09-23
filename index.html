@@ -4,92 +4,975 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Website của tôi</title>
+    <title>Tư vấn Công nghệ thông tin & Chuyển đổi số</title>
+
+    <meta name="description"
+          content="Tư vấn thiết kế, tư vấn giám sát, tư vấn thẩm tra và quản lý dự án công nghệ thông tin, chuyển đổi số.">
 
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #222;
+            padding: 0;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        /* ===== HEADER ===== */
 
         header {
-            background: #0d47a1;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid #e5e7eb;
+            backdrop-filter: blur(10px);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 42px;
-        }
-
-        header p {
-            font-size: 18px;
-            margin-top: 15px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             padding: 0 20px;
         }
 
-        .card {
-            background: white;
-            padding: 30px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: #0f4c81;
+            text-decoration: none;
         }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #222;
+        .logo span {
+            color: #0ea5e9;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #0ea5e9;
+        }
+
+        /* ===== HERO ===== */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 20px 100px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(135deg, #082f49 0%, #0f4c81 50%, #0369a1 100%);
             color: white;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            font-size: 52px;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #7dd3fc;
+        }
+
+        .hero p {
+            max-width: 720px;
+            font-size: 19px;
+            color: #e0f2fe;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #0ea5e9;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0284c7;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #bae6fd;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #0f4c81;
+        }
+
+        /* ===== COMMON ===== */
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #64748b;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* ===== ABOUT ===== */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #0f4c81;
+        }
+
+        .about p {
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .about-list li {
+            padding: 9px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .about-list li::before {
+            content: "✓";
+            color: #0ea5e9;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .about-box {
+            background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+            border-radius: 15px;
+            padding: 45px;
+            border: 1px solid #bae6fd;
+        }
+
+        .about-box h3 {
+            font-size: 25px;
+        }
+
+        /* ===== SERVICES ===== */
+
+        .services {
+            background: #f1f5f9;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.1);
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: #e0f2fe;
+            color: #0369a1;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* ===== PROJECTS ===== */
+
+        .projects {
+            background: white;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+        }
+
+        .project-top {
+            height: 130px;
+            background: linear-gradient(135deg, #0f4c81, #0284c7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 42px;
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .project-body h3 {
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        .project-body p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* ===== CAPABILITY ===== */
+
+        .capability {
+            background: #082f49;
+            color: white;
+        }
+
+        .capability .section-title h2 {
+            color: white;
+        }
+
+        .capability .section-title p {
+            color: #bae6fd;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 25px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 40px;
+            color: #7dd3fc;
+            margin-bottom: 5px;
+        }
+
+        .stat span {
+            color: #e0f2fe;
+        }
+
+        /* ===== CONTACT ===== */
+
+        .contact {
+            background: #f8fafc;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            color: #0f4c81;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #0f172a;
+        }
+
+        .contact-item span {
+            color: #64748b;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            padding: 35px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* ===== MOBILE ===== */
+
+        @media (max-width: 900px) {
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .service-grid,
+            .project-grid,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 18px;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
-    <h1>Website của tôi</h1>
-    <p>Chào mừng bạn đến với website</p>
+    <div class="navbar">
+
+        <a href="#" class="logo">
+            VN<span>THANOI</span>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#services">Dịch vụ</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+    </div>
 </header>
 
-<div class="container">
 
-    <div class="card">
-        <h2>Giới thiệu</h2>
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Tư vấn <span>Công nghệ thông tin</span>
+            & Chuyển đổi số
+        </h1>
+
         <p>
-            Đây là website được xây dựng và triển khai
-            miễn phí bằng GitHub Pages.
+            Cung cấp dịch vụ tư vấn thiết kế, tư vấn giám sát,
+            tư vấn thẩm tra và quản lý dự án công nghệ thông tin,
+            hạ tầng số và chuyển đổi số.
         </p>
+
+        <div class="buttons">
+
+            <a href="#services" class="btn btn-primary">
+                Xem dịch vụ
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Liên hệ
+            </a>
+
+        </div>
+
     </div>
 
-    <div class="card">
-        <h2>Dịch vụ</h2>
-        <p>
-            Tư vấn thiết kế, tư vấn giám sát,
-            tư vấn quản lý dự án công nghệ thông tin.
-        </p>
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Giới thiệu</h2>
+
+            <p>
+                Đồng hành cùng tổ chức, doanh nghiệp và cơ quan nhà nước
+                trong quá trình đầu tư và triển khai các dự án công nghệ.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div>
+
+                <h3>Giải pháp tư vấn toàn diện</h3>
+
+                <p>
+                    Chúng tôi cung cấp dịch vụ tư vấn xuyên suốt
+                    vòng đời dự án, từ giai đoạn chuẩn bị đầu tư,
+                    thiết kế, lựa chọn giải pháp đến triển khai,
+                    nghiệm thu và đưa hệ thống vào vận hành.
+                </p>
+
+                <ul class="about-list">
+
+                    <li>Tư vấn chuẩn bị đầu tư</li>
+
+                    <li>Tư vấn thiết kế hệ thống CNTT</li>
+
+                    <li>Tư vấn thẩm tra, thẩm định</li>
+
+                    <li>Tư vấn giám sát triển khai</li>
+
+                    <li>Tư vấn quản lý dự án</li>
+
+                    <li>Tư vấn an toàn thông tin</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <h3>Định hướng phát triển</h3>
+
+                <p>
+                    Tập trung vào chất lượng chuyên môn,
+                    tính tuân thủ, hiệu quả đầu tư và khả năng
+                    vận hành bền vững của hệ thống.
+                </p>
+
+                <p>
+                    Giải pháp được xây dựng trên cơ sở phù hợp
+                    với quy định pháp luật, tiêu chuẩn kỹ thuật
+                    và yêu cầu thực tế của từng dự án.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="card">
-        <h2>Liên hệ</h2>
-        <p>Email: example@email.com</p>
-        <p>Điện thoại: 0123 456 789</p>
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Lĩnh vực dịch vụ</h2>
+
+            <p>
+                Các dịch vụ tư vấn chính trong lĩnh vực công nghệ thông tin
+                và chuyển đổi số.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <div class="service-icon">01</div>
+
+                <h3>Tư vấn thiết kế</h3>
+
+                <p>
+                    Thiết kế hệ thống hạ tầng CNTT,
+                    phần mềm, mạng, bảo mật, trung tâm dữ liệu
+                    và các hệ thống số.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">02</div>
+
+                <h3>Tư vấn giám sát</h3>
+
+                <p>
+                    Giám sát quá trình cung cấp, triển khai,
+                    cấu hình, tích hợp, kiểm thử và nghiệm thu
+                    hệ thống.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">03</div>
+
+                <h3>Tư vấn thẩm tra</h3>
+
+                <p>
+                    Thẩm tra thiết kế, dự toán, giải pháp kỹ thuật,
+                    hồ sơ dự án và các yêu cầu về an toàn thông tin.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">04</div>
+
+                <h3>Quản lý dự án</h3>
+
+                <p>
+                    Quản lý tiến độ, chất lượng, phạm vi,
+                    chi phí, hợp đồng, rủi ro và phối hợp
+                    các bên tham gia dự án.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-</div>
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="projects" id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Dự án tiêu biểu</h2>
+
+            <p>
+                Một số nhóm dự án và hệ thống công nghệ có thể triển khai.
+            </p>
+
+        </div>
+
+
+        <div class="project-grid">
+
+            <div class="project-card">
+
+                <div class="project-top">01</div>
+
+                <div class="project-body">
+
+                    <h3>Hạ tầng công nghệ thông tin</h3>
+
+                    <p>
+                        Thiết kế và triển khai mạng LAN/WAN,
+                        firewall, core network, máy chủ,
+                        lưu trữ và trung tâm dữ liệu.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-top">02</div>
+
+                <div class="project-body">
+
+                    <h3>Chuyển đổi số</h3>
+
+                    <p>
+                        Xây dựng nền tảng số, hệ thống thông tin,
+                        tích hợp dữ liệu và các dịch vụ số.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-top">03</div>
+
+                <div class="project-body">
+
+                    <h3>An toàn thông tin</h3>
+
+                    <p>
+                        Tư vấn kiến trúc bảo mật, phân loại,
+                        xác định cấp độ và triển khai các giải pháp
+                        bảo đảm an toàn hệ thống thông tin.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CAPABILITY ================= -->
+
+<section class="capability">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Năng lực tư vấn</h2>
+
+            <p>
+                Tiếp cận dự án trên cơ sở chuyên môn kỹ thuật,
+                quản lý và tuân thủ quy định.
+            </p>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>01</strong>
+                <span>Thiết kế</span>
+            </div>
+
+            <div class="stat">
+                <strong>02</strong>
+                <span>Giám sát</span>
+            </div>
+
+            <div class="stat">
+                <strong>03</strong>
+                <span>Thẩm tra</span>
+            </div>
+
+            <div class="stat">
+                <strong>04</strong>
+                <span>Quản lý dự án</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Liên hệ</h2>
+
+            <p>
+                Trao đổi nhu cầu tư vấn và hợp tác dự án.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-info">
+
+                <h3>Thông tin liên hệ</h3>
+
+                <div class="contact-item">
+
+                    <strong>Đơn vị</strong>
+
+                    <span>
+                        Tư vấn Công nghệ thông tin & Chuyển đổi số
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>Email</strong>
+
+                    <span>
+                        contact@example.com
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>Điện thoại</strong>
+
+                    <span>
+                        0123 456 789
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>Địa chỉ</strong>
+
+                    <span>
+                        Hà Nội, Việt Nam
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-form">
+
+                <input
+                    type="text"
+                    placeholder="Họ và tên">
+
+                <input
+                    type="email"
+                    placeholder="Email">
+
+                <input
+                    type="text"
+                    placeholder="Số điện thoại">
+
+                <textarea
+                    placeholder="Nội dung cần tư vấn"></textarea>
+
+                <button
+                    class="btn btn-primary"
+                    type="button">
+                    Gửi yêu cầu
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-    © 2026 Website của tôi
+
+    <div class="footer-content">
+
+        <div>
+            <strong>VNTHANOI</strong>
+            <br>
+            Tư vấn CNTT & Chuyển đổi số
+        </div>
+
+        <div>
+            © 2026. All rights reserved.
+        </div>
+
+    </div>
+
 </footer>
+
 
 </body>
 </html>
