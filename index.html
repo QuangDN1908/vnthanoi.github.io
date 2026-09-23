@@ -2,18 +2,28 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tư vấn Công nghệ thông tin & Chuyển đổi số</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Tư vấn thiết kế, tư vấn giám sát, tư vấn thẩm tra và quản lý dự án công nghệ thông tin, chuyển đổi số.">
+          content="VNTHANOI - Tư vấn công nghệ thông tin, chuyển đổi số, tư vấn thiết kế, giám sát, thẩm tra và quản lý dự án.">
+
+    <meta name="keywords"
+          content="tư vấn CNTT, chuyển đổi số, tư vấn thiết kế, tư vấn giám sát, tư vấn thẩm tra, quản lý dự án">
+
+    <title>VNTHANOI | Tư vấn CNTT & Chuyển đổi số</title>
 
     <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -21,86 +31,262 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #1f2937;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #1e293b;
             background: #f8fafc;
+            line-height: 1.6;
         }
 
-        /* ===== HEADER ===== */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
 
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
+
+            height: 72px;
+
             background: rgba(255,255,255,0.96);
+
             border-bottom: 1px solid #e5e7eb;
-            backdrop-filter: blur(10px);
+
+            z-index: 1000;
+
+            backdrop-filter: blur(12px);
         }
 
         .navbar {
             max-width: 1200px;
-            margin: auto;
             height: 72px;
+
+            margin: auto;
+
+            padding: 0 20px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 20px;
         }
 
+
+        /* LOGO */
+
         .logo {
-            font-size: 21px;
-            font-weight: bold;
-            color: #0f4c81;
-            text-decoration: none;
+            font-size: 22px;
+            font-weight: 800;
+
+            color: #075985;
+
+            letter-spacing: 0.5px;
         }
 
         .logo span {
             color: #0ea5e9;
         }
 
-        nav ul {
+
+        /* DESKTOP MENU */
+
+        .nav-menu {
             list-style: none;
+
             display: flex;
-            gap: 28px;
+
+            align-items: center;
+
+            gap: 32px;
         }
 
-        nav a {
-            text-decoration: none;
-            color: #374151;
+        .nav-menu a {
+            position: relative;
+
             font-size: 15px;
+
             font-weight: 600;
+
+            color: #334155;
+
             transition: 0.3s;
         }
 
-        nav a:hover {
-            color: #0ea5e9;
+        .nav-menu a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 2px;
+
+            background: #0ea5e9;
+
+            transition: 0.3s;
         }
 
-        /* ===== HERO ===== */
+        .nav-menu a:hover {
+            color: #0284c7;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+
+        /* MOBILE BUTTON */
+
+        .mobile-button {
+            display: none;
+
+            width: 42px;
+            height: 42px;
+
+            border: none;
+
+            background: transparent;
+
+            cursor: pointer;
+
+            font-size: 26px;
+
+            color: #0f4c81;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
 
         .hero {
+            position: relative;
+
             min-height: 100vh;
-            padding: 150px 20px 100px;
+
+            padding:
+                150px
+                20px
+                100px;
+
             display: flex;
+
             align-items: center;
-            background:
-                linear-gradient(135deg, #082f49 0%, #0f4c81 50%, #0369a1 100%);
+
+            overflow: hidden;
+
             color: white;
+
+            background-image:
+
+                linear-gradient(
+                    90deg,
+
+                    rgba(2, 20, 40, 0.96) 0%,
+
+                    rgba(3, 39, 70, 0.90) 32%,
+
+                    rgba(3, 61, 100, 0.65) 55%,
+
+                    rgba(3, 61, 100, 0.15) 100%
+                ),
+
+                url("hero-tech.png");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
         }
 
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,0.10),
+                    transparent 40%,
+                    rgba(0,0,0,0.20)
+                );
+
+            pointer-events: none;
+        }
+
+
         .hero-content {
+            position: relative;
+
+            z-index: 2;
+
             max-width: 1200px;
+
             width: 100%;
+
             margin: auto;
         }
 
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+
+        .hero-label {
+            display: inline-block;
+
+            padding: 7px 15px;
+
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(125,211,252,0.55);
+
+            border-radius: 50px;
+
+            background: rgba(14,165,233,0.12);
+
+            color: #bae6fd;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+
         .hero h1 {
-            max-width: 800px;
-            font-size: 52px;
-            line-height: 1.15;
+            font-size: 56px;
+
+            line-height: 1.12;
+
+            font-weight: 800;
+
             margin-bottom: 25px;
         }
 
@@ -108,383 +294,876 @@
             color: #7dd3fc;
         }
 
-        .hero p {
-            max-width: 720px;
-            font-size: 19px;
-            color: #e0f2fe;
+
+        .hero-description {
+            max-width: 690px;
+
             margin-bottom: 35px;
+
+            color: #e0f2fe;
+
+            font-size: 18px;
+
+            line-height: 1.8;
         }
 
-        .buttons {
+
+        /* BUTTONS */
+
+        .hero-buttons {
             display: flex;
-            gap: 15px;
+
             flex-wrap: wrap;
+
+            gap: 14px;
         }
+
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 150px;
+
             padding: 13px 25px;
+
             border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
             transition: 0.3s;
+
+            cursor: pointer;
         }
+
 
         .btn-primary {
             background: #0ea5e9;
+
             color: white;
+
+            border: 1px solid #0ea5e9;
         }
 
         .btn-primary:hover {
             background: #0284c7;
+
             transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(14,165,233,0.3);
         }
 
+
         .btn-outline {
-            border: 1px solid #bae6fd;
+            background: transparent;
+
             color: white;
+
+            border: 1px solid #bae6fd;
         }
 
         .btn-outline:hover {
             background: white;
-            color: #0f4c81;
+
+            color: #075985;
+
+            transform: translateY(-2px);
         }
 
-        /* ===== COMMON ===== */
+
+        /* =====================================================
+           COMMON
+        ===================================================== */
 
         section {
-            padding: 90px 20px;
+            padding: 100px 20px;
         }
+
 
         .container {
             max-width: 1200px;
+
             margin: auto;
         }
 
-        .section-title {
+
+        .section-header {
             text-align: center;
-            margin-bottom: 55px;
+
+            max-width: 750px;
+
+            margin:
+                0
+                auto
+                55px;
         }
 
-        .section-title h2 {
-            font-size: 36px;
+
+        .section-label {
+            display: inline-block;
+
+            margin-bottom: 10px;
+
+            color: #0284c7;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-header h2 {
+            margin-bottom: 15px;
+
+            font-size: 38px;
+
+            line-height: 1.2;
+
             color: #0f172a;
-            margin-bottom: 12px;
         }
 
-        .section-title p {
+
+        .section-header p {
             color: #64748b;
-            max-width: 700px;
-            margin: auto;
+
+            font-size: 16px;
         }
 
-        /* ===== ABOUT ===== */
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
 
         .about {
             background: white;
         }
 
+
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 60px;
+
             align-items: center;
         }
 
-        .about h3 {
-            font-size: 28px;
+
+        .about-content h3 {
             margin-bottom: 20px;
-            color: #0f4c81;
+
+            color: #075985;
+
+            font-size: 29px;
         }
 
-        .about p {
-            color: #475569;
-            margin-bottom: 15px;
+
+        .about-content p {
+            margin-bottom: 18px;
+
+            color: #64748b;
         }
+
 
         .about-list {
+            margin-top: 25px;
+
             list-style: none;
-            margin-top: 20px;
         }
 
+
         .about-list li {
-            padding: 9px 0;
+            position: relative;
+
+            padding:
+                11px
+                0
+                11px
+                32px;
+
             border-bottom: 1px solid #e5e7eb;
+
+            color: #475569;
         }
+
 
         .about-list li::before {
             content: "✓";
+
+            position: absolute;
+
+            left: 0;
+
             color: #0ea5e9;
+
             font-weight: bold;
-            margin-right: 10px;
         }
 
-        .about-box {
-            background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
-            border-radius: 15px;
+
+        .about-card {
+            position: relative;
+
             padding: 45px;
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e0f2fe,
+                    #f8fafc
+                );
+
             border: 1px solid #bae6fd;
+
+            overflow: hidden;
         }
 
-        .about-box h3 {
+
+        .about-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            right: -70px;
+            top: -70px;
+
+            border-radius: 50%;
+
+            background: rgba(14,165,233,0.12);
+        }
+
+
+        .about-card h3 {
+            position: relative;
+
+            margin-bottom: 18px;
+
+            color: #075985;
+
             font-size: 25px;
         }
 
-        /* ===== SERVICES ===== */
+
+        .about-card p {
+            position: relative;
+
+            color: #475569;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
 
         .services {
             background: #f1f5f9;
         }
 
+
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 22px;
         }
 
+
         .service-card {
-            background: white;
             padding: 30px 25px;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
+
+            background: white;
+
+            border:
+                1px solid
+                #e2e8f0;
+
+            border-radius: 12px;
+
             transition: 0.3s;
         }
 
+
         .service-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.1);
+            transform:
+                translateY(-8px);
+
+            border-color: #bae6fd;
+
+            box-shadow:
+                0 18px 35px
+                rgba(15,23,42,0.10);
         }
 
-        .service-icon {
-            width: 52px;
-            height: 52px;
+
+        .service-number {
+            width: 50px;
+            height: 50px;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
-            background: #e0f2fe;
-            color: #0369a1;
-            font-size: 25px;
+
             margin-bottom: 20px;
+
+            border-radius: 10px;
+
+            background: #e0f2fe;
+
+            color: #0369a1;
+
+            font-size: 15px;
+
+            font-weight: 800;
         }
+
 
         .service-card h3 {
-            font-size: 19px;
             margin-bottom: 12px;
+
             color: #0f172a;
+
+            font-size: 19px;
         }
+
 
         .service-card p {
-            font-size: 14px;
             color: #64748b;
+
+            font-size: 14px;
+
+            line-height: 1.7;
         }
 
-        /* ===== PROJECTS ===== */
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
 
         .projects {
             background: white;
         }
 
+
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 25px;
         }
 
+
         .project-card {
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
             overflow: hidden;
+
             background: white;
+
+            border:
+                1px solid
+                #e2e8f0;
+
+            border-radius: 12px;
+
             transition: 0.3s;
         }
 
+
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(15,23,42,0.09);
         }
 
-        .project-top {
-            height: 130px;
-            background: linear-gradient(135deg, #0f4c81, #0284c7);
+
+        .project-image {
+            height: 170px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #082f49,
+                    #0284c7
+                );
+
             color: white;
-            font-size: 42px;
+
+            font-size: 45px;
+
+            font-weight: 800;
         }
+
 
         .project-body {
             padding: 25px;
         }
 
+
         .project-body h3 {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+
             color: #0f172a;
+
+            font-size: 20px;
         }
+
 
         .project-body p {
             color: #64748b;
+
             font-size: 14px;
         }
 
-        /* ===== CAPABILITY ===== */
+
+        /* =====================================================
+           CAPABILITY
+        ===================================================== */
 
         .capability {
-            background: #082f49;
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #082f49,
+                    #0f4c81
+                );
+
             color: white;
         }
 
-        .capability .section-title h2 {
+
+        .capability .section-header h2 {
             color: white;
         }
 
-        .capability .section-title p {
+
+        .capability .section-header p {
             color: #bae6fd;
         }
 
+
         .stats {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 20px;
-            text-align: center;
         }
 
+
         .stat {
-            padding: 25px;
+            padding: 35px 20px;
+
+            text-align: center;
+
+            border:
+                1px solid
+                rgba(186,230,253,0.18);
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,0.05);
         }
+
 
         .stat strong {
             display: block;
-            font-size: 40px;
-            color: #7dd3fc;
+
             margin-bottom: 5px;
+
+            color: #7dd3fc;
+
+            font-size: 42px;
         }
+
 
         .stat span {
             color: #e0f2fe;
+
+            font-size: 15px;
         }
 
-        /* ===== CONTACT ===== */
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
 
         .contact {
             background: #f8fafc;
         }
 
+
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 55px;
         }
+
 
         .contact-info h3 {
-            font-size: 28px;
-            color: #0f4c81;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+
+            color: #075985;
+
+            font-size: 29px;
         }
 
+
         .contact-item {
-            margin: 20px 0;
+            margin-bottom: 23px;
         }
+
 
         .contact-item strong {
             display: block;
+
+            margin-bottom: 4px;
+
             color: #0f172a;
         }
+
 
         .contact-item span {
             color: #64748b;
         }
 
+
         .contact-form {
-            background: white;
             padding: 30px;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
+
+            background: white;
+
+            border:
+                1px solid
+                #e2e8f0;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 10px 25px
+                rgba(15,23,42,0.05);
         }
+
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 13px;
-            margin-bottom: 15px;
-            border: 1px solid #cbd5e1;
-            border-radius: 5px;
+
+            padding: 13px 15px;
+
+            border:
+                1px solid
+                #cbd5e1;
+
+            border-radius: 6px;
+
+            outline: none;
+
             font-family: inherit;
+
+            font-size: 14px;
+
+            transition: 0.3s;
         }
 
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #0ea5e9;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(14,165,233,0.10);
+        }
+
+
         .contact-form textarea {
-            height: 130px;
+            min-height: 140px;
+
             resize: vertical;
         }
 
+
         .contact-form button {
             width: 100%;
+
             border: none;
-            cursor: pointer;
-            font-size: 15px;
         }
 
-        /* ===== FOOTER ===== */
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
 
         footer {
-            background: #020617;
-            color: #94a3b8;
             padding: 35px 20px;
+
+            background: #020617;
+
+            color: #94a3b8;
         }
+
 
         .footer-content {
             max-width: 1200px;
+
             margin: auto;
+
             display: flex;
+
             justify-content: space-between;
+
             gap: 20px;
+
             flex-wrap: wrap;
         }
 
-        footer strong {
+
+        .footer-brand strong {
             color: white;
+
+            font-size: 19px;
         }
 
-        /* ===== MOBILE ===== */
 
-        @media (max-width: 900px) {
+        .footer-brand span {
+            display: block;
+
+            margin-top: 4px;
+        }
+
+
+        /* =====================================================
+           BACK TO TOP
+        ===================================================== */
+
+        .back-top {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #0ea5e9;
+
+            color: white;
+
+            font-size: 20px;
+
+            z-index: 999;
+
+            box-shadow:
+                0 8px 20px
+                rgba(14,165,233,0.3);
+
+            transition: 0.3s;
+        }
+
+
+        .back-top:hover {
+            background: #0284c7;
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 950px) {
 
             .service-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
+
 
             .project-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
+
             .stats {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
+
+
+            .hero h1 {
+                font-size: 45px;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            header {
+                height: 65px;
+            }
+
+
+            .navbar {
+                height: 65px;
+            }
+
+
+            .mobile-button {
+                display: block;
+            }
+
+
+            .nav-menu {
+                position: absolute;
+
+                top: 65px;
+                left: 0;
+
+                width: 100%;
+
+                padding: 20px;
+
+                flex-direction: column;
+
+                gap: 0;
+
+                background: white;
+
+                border-bottom:
+                    1px solid
+                    #e5e7eb;
+
+                box-shadow:
+                    0 10px 20px
+                    rgba(0,0,0,0.08);
+
+                display: none;
+            }
+
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+
+            .nav-menu a {
+                display: block;
+
+                padding: 13px 5px;
+
+                border-bottom:
+                    1px solid
+                    #f1f5f9;
+            }
+
+
+            .nav-menu a::after {
+                display: none;
+            }
+
+
+            .hero {
+                min-height: 100vh;
+
+                padding:
+                    130px
+                    20px
+                    80px;
+
+                background-position:
+                    62% center;
+            }
+
+
+            .hero h1 {
+                font-size: 37px;
+            }
+
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+
+            section {
+                padding:
+                    75px
+                    18px;
+            }
+
+
+            .section-header h2 {
+                font-size: 30px;
+            }
+
 
             .about-grid,
             .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero h1 {
-                font-size: 40px;
-            }
-        }
-
-        @media (max-width: 650px) {
-
-            nav {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 34px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
 
             .service-grid,
             .project-grid,
@@ -492,68 +1171,178 @@
                 grid-template-columns: 1fr;
             }
 
-            section {
-                padding: 65px 18px;
+
+            .about-card {
+                padding: 30px;
             }
 
-            .section-title h2 {
-                font-size: 29px;
+
+            .footer-content {
+                flex-direction: column;
+
+                text-align: center;
             }
         }
+
+
+        @media (max-width: 420px) {
+
+            .logo {
+                font-size: 19px;
+            }
+
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+
+            .btn {
+                width: 100%;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header>
+
     <div class="navbar">
 
-        <a href="#" class="logo">
+        <a href="#home" class="logo">
             VN<span>THANOI</span>
         </a>
 
+
+        <button
+            class="mobile-button"
+            id="mobileButton"
+            aria-label="Mở menu">
+
+            ☰
+
+        </button>
+
+
         <nav>
-            <ul>
-                <li><a href="#home">Trang chủ</a></li>
-                <li><a href="#about">Giới thiệu</a></li>
-                <li><a href="#services">Dịch vụ</a></li>
-                <li><a href="#projects">Dự án</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
+
+            <ul class="nav-menu" id="navMenu">
+
+                <li>
+                    <a href="#home">
+                        Trang chủ
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        Giới thiệu
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#services">
+                        Dịch vụ
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects">
+                        Dự án
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Liên hệ
+                    </a>
+                </li>
+
             </ul>
+
         </nav>
 
     </div>
+
 </header>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero" id="home">
 
     <div class="hero-content">
 
-        <h1>
-            Tư vấn <span>Công nghệ thông tin</span>
-            & Chuyển đổi số
-        </h1>
+        <div class="hero-text">
 
-        <p>
-            Cung cấp dịch vụ tư vấn thiết kế, tư vấn giám sát,
-            tư vấn thẩm tra và quản lý dự án công nghệ thông tin,
-            hạ tầng số và chuyển đổi số.
-        </p>
+            <div class="hero-label">
+                Công nghệ • Chuyển đổi số • An toàn thông tin
+            </div>
 
-        <div class="buttons">
 
-            <a href="#services" class="btn btn-primary">
-                Xem dịch vụ
-            </a>
+            <h1>
 
-            <a href="#contact" class="btn btn-outline">
-                Liên hệ
-            </a>
+                Tư vấn
+
+                <span>
+                    Công nghệ thông tin
+                </span>
+
+                &
+
+                <br>
+
+                Chuyển đổi số
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Cung cấp dịch vụ tư vấn thiết kế,
+                tư vấn giám sát, tư vấn thẩm tra
+                và quản lý dự án công nghệ thông tin,
+                hạ tầng số và chuyển đổi số.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#services"
+                    class="btn btn-primary">
+
+                    Xem dịch vụ
+
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="btn btn-outline">
+
+                    Liên hệ
+
+                </a>
+
+            </div>
 
         </div>
 
@@ -562,19 +1351,31 @@
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
 
 <section class="about" id="about">
 
     <div class="container">
 
-        <div class="section-title">
 
-            <h2>Giới thiệu</h2>
+        <div class="section-header">
+
+            <div class="section-label">
+                Về chúng tôi
+            </div>
+
+            <h2>
+                Giải pháp tư vấn toàn diện
+            </h2>
 
             <p>
-                Đồng hành cùng tổ chức, doanh nghiệp và cơ quan nhà nước
-                trong quá trình đầu tư và triển khai các dự án công nghệ.
+                Đồng hành cùng các cơ quan,
+                tổ chức và doanh nghiệp trong
+                quá trình đầu tư và triển khai
+                các dự án công nghệ.
             </p>
 
         </div>
@@ -582,50 +1383,90 @@
 
         <div class="about-grid">
 
-            <div>
 
-                <h3>Giải pháp tư vấn toàn diện</h3>
+            <div class="about-content">
+
+                <h3>
+                    Chuyên môn gắn với hiệu quả đầu tư
+                </h3>
+
 
                 <p>
-                    Chúng tôi cung cấp dịch vụ tư vấn xuyên suốt
-                    vòng đời dự án, từ giai đoạn chuẩn bị đầu tư,
-                    thiết kế, lựa chọn giải pháp đến triển khai,
-                    nghiệm thu và đưa hệ thống vào vận hành.
+
+                    Cung cấp dịch vụ tư vấn xuyên suốt
+                    vòng đời dự án, từ chuẩn bị đầu tư,
+                    khảo sát, thiết kế, lựa chọn giải pháp
+                    đến triển khai, kiểm thử, nghiệm thu
+                    và đưa hệ thống vào vận hành.
+
                 </p>
+
+
+                <p>
+
+                    Các giải pháp được xem xét trên cơ sở
+                    yêu cầu nghiệp vụ, kiến trúc hệ thống,
+                    tiêu chuẩn kỹ thuật, an toàn thông tin
+                    và các quy định pháp luật có liên quan.
+
+                </p>
+
 
                 <ul class="about-list">
 
-                    <li>Tư vấn chuẩn bị đầu tư</li>
+                    <li>
+                        Tư vấn chuẩn bị đầu tư
+                    </li>
 
-                    <li>Tư vấn thiết kế hệ thống CNTT</li>
+                    <li>
+                        Tư vấn thiết kế hệ thống CNTT
+                    </li>
 
-                    <li>Tư vấn thẩm tra, thẩm định</li>
+                    <li>
+                        Tư vấn thẩm tra, thẩm định
+                    </li>
 
-                    <li>Tư vấn giám sát triển khai</li>
+                    <li>
+                        Tư vấn giám sát triển khai
+                    </li>
 
-                    <li>Tư vấn quản lý dự án</li>
+                    <li>
+                        Tư vấn quản lý dự án
+                    </li>
 
-                    <li>Tư vấn an toàn thông tin</li>
+                    <li>
+                        Tư vấn an toàn thông tin
+                    </li>
 
                 </ul>
 
             </div>
 
 
-            <div class="about-box">
+            <div class="about-card">
 
-                <h3>Định hướng phát triển</h3>
+                <h3>
+                    Định hướng phát triển
+                </h3>
+
 
                 <p>
+
                     Tập trung vào chất lượng chuyên môn,
-                    tính tuân thủ, hiệu quả đầu tư và khả năng
-                    vận hành bền vững của hệ thống.
+                    tính tuân thủ, hiệu quả đầu tư và
+                    khả năng vận hành bền vững của
+                    hệ thống.
+
                 </p>
 
+
                 <p>
-                    Giải pháp được xây dựng trên cơ sở phù hợp
-                    với quy định pháp luật, tiêu chuẩn kỹ thuật
-                    và yêu cầu thực tế của từng dự án.
+
+                    Ưu tiên các giải pháp có khả năng
+                    mở rộng, tích hợp và phù hợp với
+                    định hướng phát triển công nghệ
+                    của từng tổ chức.
+
                 </p>
 
             </div>
@@ -637,18 +1478,29 @@
 </section>
 
 
-<!-- ================= SERVICES ================= -->
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
 
 <section class="services" id="services">
 
     <div class="container">
 
-        <div class="section-title">
 
-            <h2>Lĩnh vực dịch vụ</h2>
+        <div class="section-header">
+
+            <div class="section-label">
+                Dịch vụ
+            </div>
+
+            <h2>
+                Lĩnh vực tư vấn
+            </h2>
 
             <p>
-                Các dịch vụ tư vấn chính trong lĩnh vực công nghệ thông tin
+                Các nhóm dịch vụ tư vấn chính
+                trong lĩnh vực công nghệ thông tin
                 và chuyển đổi số.
             </p>
 
@@ -657,16 +1509,24 @@
 
         <div class="service-grid">
 
+
             <div class="service-card">
 
-                <div class="service-icon">01</div>
+                <div class="service-number">
+                    01
+                </div>
 
-                <h3>Tư vấn thiết kế</h3>
+                <h3>
+                    Tư vấn thiết kế
+                </h3>
 
                 <p>
+
                     Thiết kế hệ thống hạ tầng CNTT,
-                    phần mềm, mạng, bảo mật, trung tâm dữ liệu
-                    và các hệ thống số.
+                    mạng, bảo mật, máy chủ, lưu trữ,
+                    trung tâm dữ liệu và các hệ thống
+                    thông tin.
+
                 </p>
 
             </div>
@@ -674,14 +1534,20 @@
 
             <div class="service-card">
 
-                <div class="service-icon">02</div>
+                <div class="service-number">
+                    02
+                </div>
 
-                <h3>Tư vấn giám sát</h3>
+                <h3>
+                    Tư vấn giám sát
+                </h3>
 
                 <p>
-                    Giám sát quá trình cung cấp, triển khai,
-                    cấu hình, tích hợp, kiểm thử và nghiệm thu
-                    hệ thống.
+
+                    Giám sát quá trình cung cấp,
+                    triển khai, cấu hình, tích hợp,
+                    kiểm thử và nghiệm thu hệ thống.
+
                 </p>
 
             </div>
@@ -689,13 +1555,20 @@
 
             <div class="service-card">
 
-                <div class="service-icon">03</div>
+                <div class="service-number">
+                    03
+                </div>
 
-                <h3>Tư vấn thẩm tra</h3>
+                <h3>
+                    Tư vấn thẩm tra
+                </h3>
 
                 <p>
-                    Thẩm tra thiết kế, dự toán, giải pháp kỹ thuật,
-                    hồ sơ dự án và các yêu cầu về an toàn thông tin.
+
+                    Thẩm tra thiết kế, dự toán,
+                    giải pháp kỹ thuật, hồ sơ dự án
+                    và các yêu cầu về an toàn thông tin.
+
                 </p>
 
             </div>
@@ -703,17 +1576,24 @@
 
             <div class="service-card">
 
-                <div class="service-icon">04</div>
+                <div class="service-number">
+                    04
+                </div>
 
-                <h3>Quản lý dự án</h3>
+                <h3>
+                    Quản lý dự án
+                </h3>
 
                 <p>
-                    Quản lý tiến độ, chất lượng, phạm vi,
+
+                    Quản lý phạm vi, tiến độ, chất lượng,
                     chi phí, hợp đồng, rủi ro và phối hợp
                     các bên tham gia dự án.
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -722,18 +1602,29 @@
 </section>
 
 
-<!-- ================= PROJECTS ================= -->
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
 
 <section class="projects" id="projects">
 
     <div class="container">
 
-        <div class="section-title">
 
-            <h2>Dự án tiêu biểu</h2>
+        <div class="section-header">
+
+            <div class="section-label">
+                Kinh nghiệm
+            </div>
+
+            <h2>
+                Lĩnh vực dự án
+            </h2>
 
             <p>
-                Một số nhóm dự án và hệ thống công nghệ có thể triển khai.
+                Các nhóm dự án công nghệ có thể
+                cung cấp dịch vụ tư vấn.
             </p>
 
         </div>
@@ -741,18 +1632,26 @@
 
         <div class="project-grid">
 
+
             <div class="project-card">
 
-                <div class="project-top">01</div>
+                <div class="project-image">
+                    01
+                </div>
 
                 <div class="project-body">
 
-                    <h3>Hạ tầng công nghệ thông tin</h3>
+                    <h3>
+                        Hạ tầng CNTT
+                    </h3>
 
                     <p>
-                        Thiết kế và triển khai mạng LAN/WAN,
-                        firewall, core network, máy chủ,
-                        lưu trữ và trung tâm dữ liệu.
+
+                        Mạng LAN/WAN, firewall,
+                        core network, máy chủ,
+                        lưu trữ, trung tâm dữ liệu
+                        và hạ tầng số.
+
                     </p>
 
                 </div>
@@ -762,15 +1661,22 @@
 
             <div class="project-card">
 
-                <div class="project-top">02</div>
+                <div class="project-image">
+                    02
+                </div>
 
                 <div class="project-body">
 
-                    <h3>Chuyển đổi số</h3>
+                    <h3>
+                        Chuyển đổi số
+                    </h3>
 
                     <p>
-                        Xây dựng nền tảng số, hệ thống thông tin,
-                        tích hợp dữ liệu và các dịch vụ số.
+
+                        Nền tảng số, hệ thống thông tin,
+                        tích hợp dữ liệu, API,
+                        cơ sở dữ liệu và dịch vụ số.
+
                     </p>
 
                 </div>
@@ -780,21 +1686,28 @@
 
             <div class="project-card">
 
-                <div class="project-top">03</div>
+                <div class="project-image">
+                    03
+                </div>
 
                 <div class="project-body">
 
-                    <h3>An toàn thông tin</h3>
+                    <h3>
+                        An toàn thông tin
+                    </h3>
 
                     <p>
-                        Tư vấn kiến trúc bảo mật, phân loại,
-                        xác định cấp độ và triển khai các giải pháp
-                        bảo đảm an toàn hệ thống thông tin.
+
+                        Kiến trúc bảo mật, phân loại,
+                        xác định cấp độ và triển khai
+                        các giải pháp bảo đảm ATTT.
+
                     </p>
 
                 </div>
 
             </div>
+
 
         </div>
 
@@ -803,19 +1716,32 @@
 </section>
 
 
-<!-- ================= CAPABILITY ================= -->
+
+<!-- =========================================================
+     CAPABILITY
+========================================================= -->
 
 <section class="capability">
 
     <div class="container">
 
-        <div class="section-title">
 
-            <h2>Năng lực tư vấn</h2>
+        <div class="section-header">
+
+            <div class="section-label">
+                Năng lực
+            </div>
+
+            <h2>
+                Năng lực tư vấn
+            </h2>
 
             <p>
-                Tiếp cận dự án trên cơ sở chuyên môn kỹ thuật,
-                quản lý và tuân thủ quy định.
+
+                Tiếp cận dự án trên cơ sở
+                chuyên môn kỹ thuật, quản lý
+                và tuân thủ quy định.
+
             </p>
 
         </div>
@@ -823,25 +1749,58 @@
 
         <div class="stats">
 
-            <div class="stat">
-                <strong>01</strong>
-                <span>Thiết kế</span>
-            </div>
 
             <div class="stat">
-                <strong>02</strong>
-                <span>Giám sát</span>
+
+                <strong>
+                    01
+                </strong>
+
+                <span>
+                    Tư vấn thiết kế
+                </span>
+
             </div>
 
-            <div class="stat">
-                <strong>03</strong>
-                <span>Thẩm tra</span>
-            </div>
 
             <div class="stat">
-                <strong>04</strong>
-                <span>Quản lý dự án</span>
+
+                <strong>
+                    02
+                </strong>
+
+                <span>
+                    Tư vấn giám sát
+                </span>
+
             </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    03
+                </strong>
+
+                <span>
+                    Tư vấn thẩm tra
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    04
+                </strong>
+
+                <span>
+                    Quản lý dự án
+                </span>
+
+            </div>
+
 
         </div>
 
@@ -850,18 +1809,29 @@
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
 
 <section class="contact" id="contact">
 
     <div class="container">
 
-        <div class="section-title">
 
-            <h2>Liên hệ</h2>
+        <div class="section-header">
+
+            <div class="section-label">
+                Liên hệ
+            </div>
+
+            <h2>
+                Trao đổi nhu cầu tư vấn
+            </h2>
 
             <p>
-                Trao đổi nhu cầu tư vấn và hợp tác dự án.
+                Liên hệ để trao đổi về nhu cầu
+                tư vấn và hợp tác dự án.
             </p>
 
         </div>
@@ -872,14 +1842,19 @@
 
             <div class="contact-info">
 
-                <h3>Thông tin liên hệ</h3>
+                <h3>
+                    Thông tin liên hệ
+                </h3>
+
 
                 <div class="contact-item">
 
-                    <strong>Đơn vị</strong>
+                    <strong>
+                        Đơn vị
+                    </strong>
 
                     <span>
-                        Tư vấn Công nghệ thông tin & Chuyển đổi số
+                        VNTHANOI
                     </span>
 
                 </div>
@@ -887,7 +1862,23 @@
 
                 <div class="contact-item">
 
-                    <strong>Email</strong>
+                    <strong>
+                        Lĩnh vực
+                    </strong>
+
+                    <span>
+                        Công nghệ thông tin &
+                        Chuyển đổi số
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        Email
+                    </strong>
 
                     <span>
                         contact@example.com
@@ -898,7 +1889,9 @@
 
                 <div class="contact-item">
 
-                    <strong>Điện thoại</strong>
+                    <strong>
+                        Điện thoại
+                    </strong>
 
                     <span>
                         0123 456 789
@@ -909,7 +1902,9 @@
 
                 <div class="contact-item">
 
-                    <strong>Địa chỉ</strong>
+                    <strong>
+                        Địa chỉ
+                    </strong>
 
                     <span>
                         Hà Nội, Việt Nam
@@ -922,29 +1917,52 @@
 
             <div class="contact-form">
 
-                <input
-                    type="text"
-                    placeholder="Họ và tên">
 
-                <input
-                    type="email"
-                    placeholder="Email">
+                <div class="form-group">
 
-                <input
-                    type="text"
-                    placeholder="Số điện thoại">
+                    <input
+                        type="text"
+                        placeholder="Họ và tên">
 
-                <textarea
-                    placeholder="Nội dung cần tư vấn"></textarea>
+                </div>
+
+
+                <div class="form-group">
+
+                    <input
+                        type="email"
+                        placeholder="Email">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <input
+                        type="text"
+                        placeholder="Số điện thoại">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <textarea
+                        placeholder="Nội dung cần tư vấn"></textarea>
+
+                </div>
+
 
                 <button
-                    class="btn btn-primary"
-                    type="button">
+                    type="button"
+                    class="btn btn-primary">
+
                     Gửi yêu cầu
+
                 </button>
 
-            </div>
 
+            </div>
 
         </div>
 
@@ -953,25 +1971,106 @@
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
     <div class="footer-content">
 
-        <div>
-            <strong>VNTHANOI</strong>
-            <br>
-            Tư vấn CNTT & Chuyển đổi số
+
+        <div class="footer-brand">
+
+            <strong>
+                VNTHANOI
+            </strong>
+
+            <span>
+                Tư vấn CNTT & Chuyển đổi số
+            </span>
+
         </div>
 
+
         <div>
-            © 2026. All rights reserved.
+
+            © 2026 VNTHANOI.
+            All rights reserved.
+
         </div>
+
 
     </div>
 
 </footer>
+
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<a
+    href="#home"
+    class="back-top"
+    aria-label="Về đầu trang">
+
+    ↑
+
+</a>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    const mobileButton =
+        document.getElementById("mobileButton");
+
+    const navMenu =
+        document.getElementById("navMenu");
+
+
+    mobileButton.addEventListener(
+        "click",
+        function () {
+
+            navMenu.classList.toggle("active");
+
+        }
+    );
+
+
+    const navLinks =
+        document.querySelectorAll(
+            ".nav-menu a"
+        );
+
+
+    navLinks.forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    navMenu.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+</script>
 
 
 </body>
