@@ -32,3 +32,37 @@ footer{background:#061522;color:#9db0bf;padding-top:65px}.footer-grid{display:gr
 @media(max-width:520px){.brand b{font-size:14px}.brand small{font-size:7px}.hero h1{font-size:34px}.hero-content{justify-content:center}.service-grid,.award-grid{grid-template-columns:1fr}.project-grid{display:block}.project-card,.project-card.large{height:260px;margin-bottom:12px}.stats-grid{grid-template-columns:1fr 1fr;gap:25px}.stats-grid div{border:0}.stats strong{font-size:33px}.about-content h2,.capability h2,.section-head h2{font-size:31px}.news-main>img{height:220px}.partner-row{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.cap-visual{height:350px}.ring-3{width:330px;height:330px}.ring-2{width:260px;height:260px}.ring-1{width:180px;height:180px}}
 .brand {display:flex;align-items:center;text-decoration:none;}
 .company-logo {width:125px;height:78px;object-fit: contain;object-position:center;display:block;}
+.company-footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.company-footer-logo img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    display: block;
+}
+
+.company-footer-name {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.company-footer-name strong {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 0.2px;
+}
+
+.company-footer-name small {
+    color: #8fa4b5;
+    font-size: 9px;
+    line-height: 1.4;
+    letter-spacing: 0.6px;
+}
