@@ -31,7 +31,14 @@ footer{background:#061522;color:#9db0bf;padding-top:65px}.footer-grid{display:gr
 @media(max-width:800px){.container{width:min(100% - 30px,var(--container))}.topbar{display:none}.header{height:70px}.menu-toggle{display:block}.nav{position:absolute;top:70px;left:0;width:100%;height:auto;background:#fff;display:none;flex-direction:column;align-items:stretch;padding:10px 20px;box-shadow:0 15px 25px #001d3a20}.nav.open{display:flex}.nav>a,.nav-dropdown>a{height:45px}.nav-contact{justify-content:center;margin:8px 0}.dropdown-menu{position:static;width:100%;box-shadow:none;display:none;opacity:1;transform:none;pointer-events:auto}.nav-dropdown:hover .dropdown-menu{display:block}.hero{height:590px}.hero h1{font-size:39px}.hero-text{font-size:13px}.section{padding:75px 0}.about-grid,.capability-grid,.news-grid{grid-template-columns:1fr}.about-image img{min-height:330px}.experience{right:10px}.section-head{display:block}.section-intro{margin-top:15px}.service-grid{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr}.project-card.large{grid-column:auto;height:320px}.project-card{height:250px}.award-grid{grid-template-columns:1fr 1fr}.partner-row{grid-template-columns:repeat(3,1fr)}.cta-inner{display:block}.cta .btn{margin-top:25px}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:span 2}.footer-bottom .container{display:block}.footer-bottom span{display:block;margin:4px 0}}
 @media(max-width:520px){.brand b{font-size:14px}.brand small{font-size:7px}.hero h1{font-size:34px}.hero-content{justify-content:center}.service-grid,.award-grid{grid-template-columns:1fr}.project-grid{display:block}.project-card,.project-card.large{height:260px;margin-bottom:12px}.stats-grid{grid-template-columns:1fr 1fr;gap:25px}.stats-grid div{border:0}.stats strong{font-size:33px}.about-content h2,.capability h2,.section-head h2{font-size:31px}.news-main>img{height:220px}.partner-row{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.cap-visual{height:350px}.ring-3{width:330px;height:330px}.ring-2{width:260px;height:260px}.ring-1{width:180px;height:180px}}
 .brand {display:flex;align-items:center;text-decoration:none;}
-.company-logo {width:110px;height:60px;object-fit: contain;object-position:center;display:block;}
+.company-logo {
+    width:140px;
+    height:80px;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+}
+
 .company-footer-logo {
     display: flex;
     align-items: center;
@@ -40,10 +47,11 @@ footer{background:#061522;color:#9db0bf;padding-top:65px}.footer-grid{display:gr
 }
 
 .company-footer-logo img {
-    width: 50px;
-    height: 50px;
+    width: 135px;
+    height: 80px;
     object-fit: contain;
     display: block;
+    transform: translateY(1px);
 }
 
 .company-footer-name {
