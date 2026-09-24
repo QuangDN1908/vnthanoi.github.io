@@ -47,8 +47,8 @@ footer{background:#061522;color:#9db0bf;padding-top:65px}.footer-grid{display:gr
 }
 
 .company-footer-logo img {
-    width: 135px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
     display: block;
     transform: translateY(1px);
