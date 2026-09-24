@@ -47,8 +47,8 @@ footer{background:#061522;color:#9db0bf;padding-top:65px}.footer-grid{display:gr
 }
 
 .company-footer-logo img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
     display: block;
     transform: translateY(1px);
@@ -62,7 +62,7 @@ footer{background:#061522;color:#9db0bf;padding-top:65px}.footer-grid{display:gr
 
 .company-footer-name strong {
     color: #ffffff;
-    font-size: 126px;
+    font-size: 16px;
     font-weight: 800;
     line-height: 1.25;
     letter-spacing: 0.2px;
